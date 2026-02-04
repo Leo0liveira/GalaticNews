@@ -2,6 +2,7 @@ import { Container } from "@/src/components/Container";
 import { Header } from "@/src/components/Header";
 import { PostsList } from "@/src/components/PostList";
 import { SpinLoader } from "@/src/components/SpinLoader";
+import { PostHeading } from "@/src/components/PostHeading";
 import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,12 +30,10 @@ export default async function HomePage() {
             20/04/2025 10:00
           </time>
 
-          <h1 className="text-2xl/tight font-extrabold sm:text-4xl">
-            <Link href="#">
-              Dia histórico para a ciência: revelada a primeira imagem de buraco
-              negro
-            </Link>
-          </h1>
+          <PostHeading as="h1" url="#">
+            Dia histórico para a ciência: revelada a primeira imagem de buraco
+            negro
+          </PostHeading>
 
           <p>
             Event Horizon Telescope, rede de oito observatórios ao redor do
