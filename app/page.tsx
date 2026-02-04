@@ -3,25 +3,26 @@ import { Header } from "@/src/components/Header";
 import { PostsList } from "@/src/components/PostList";
 import { SpinLoader } from "@/src/components/SpinLoader";
 import { PostHeading } from "@/src/components/PostHeading";
+import { PostCoverImage } from "@/src/components/PostCoverImage";
 import { Suspense } from "react";
-import Image from "next/image";
-import Link from "next/link";
 
 export default async function HomePage() {
   return (
     <Container>
       <Header />
       <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
-        <Link className="w-full h-full overflow-hidden rounded-xl" href="#">
-          <Image
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition"
-            src="/images/news_01.png"
-            width={1200}
-            height={720}
-            alt="Título do post"
-            priority
-          />
-        </Link>
+        <PostCoverImage
+          linkProps={{
+            href: "/post/asdfasdf",
+          }}
+          imageProps={{
+            width: 1200,
+            height: 720,
+            src: "/images/news_01.png",
+            alt: "Alt da imagem",
+            priority: true,
+          }}
+        />
         <div className="flex flex-col gap-4 sm:justify-center">
           <time
             className="text-slate-600 block text-sm/tight"
