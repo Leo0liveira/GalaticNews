@@ -1,5 +1,5 @@
 import { PostCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
+import { PostSummary } from "../PostSummary";
 
 export function PostFeatured() {
   const slug = "qualquer";
@@ -20,25 +20,17 @@ export function PostFeatured() {
         }}
       />
 
-      <div className="flex flex-col gap-4 sm:justify-center">
-        <time
-          className="text-slate-600 block text-sm/tight"
-          dateTime="2025-04-20"
-        >
-          10/04/2019 10:00
-        </time>
-
-        <PostHeading as="h1" url={postLink}>
-          Dia histórico para a ciência: revelada a primeira imagem de buraco
-          negro
-        </PostHeading>
-
-        <p>
-          Event Horizon Telescope, rede de oito observatórios ao redor do mundo,
-          divulgou hoje a primeira imagem real de um buraco negro supermassivo,
-          fenômeno previsto por Einstein
-        </p>
-      </div>
+      <PostSummary
+        postLink={postLink}
+        postHeading="h1"
+        createdAt={"2019-04-10T00:24:38.616Z"}
+        excerpt={
+          "Event Horizon Telescope, rede de oito observatórios ao redor do mundo, divulgou hoje a primeira imagem real de um buraco negro supermassivo, fenômeno previsto por Einstein"
+        }
+        title={
+          "Dia histórico para a ciência: revelada a primeira imagem de buraco negro"
+        }
+      />
     </section>
   );
 }
