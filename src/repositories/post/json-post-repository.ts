@@ -8,8 +8,7 @@ const JSON_POSTS_FILE_PATH = resolve(
   ROOT_DIR,
   'src',
   'db',
-  'seed',
-  'posts.json',
+  'seed.json',
 );
 const SIMULATE_WAIT_IN_MS = 5000;
 
