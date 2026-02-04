@@ -1,9 +1,9 @@
-"use client";
-
-export default function Header() {
+export function Header() {
   return (
-    <h1 className="text-6xl font-bold text-blue-500 hover:text-blue-50 hover:bg-blue-500 transition duration-1000">
-      Texto do meu H1
-    </h1>
+    <header>
+      <h1 className="text-4xl/normal font-extrabold py-8 sm:text-5xl/normal sm:py-10 md:text-6xl/normal md:py-11 lg:text-7xl/normal lg:py-12">
+        <a href="#">Galatic News.</a>
+      </h1>
+    </header>
   );
 }
