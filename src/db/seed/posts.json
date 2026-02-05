@@ -1,20 +1,20 @@
 {
   "posts": [
     {
-      "id": "0a7a0a2e-7a34-4e76-9e93-0c2d31235a",
+      "id": "0a7a0a2e-7a34-4e76-9e93-0c2d31235a00",
       "title": "Dia histórico para a ciência: revelada a primeira imagem de buraco negro",
       "slug": "primeira-imagem-buraco-negro",
       "excerpt": "Event Horizon Telescope, rede de oito observatórios ao redor do mundo, divulgou hoje a primeira imagem real de um buraco negro supermassivo, fenômeno previsto por Einstein.",
-      "content": "",
+      "content": "Em 10 de abril de 2019, cientistas da colaboração Event Horizon Telescope (EHT) revelaram a primeira imagem direta de um buraco negro. O registro histórico mostra a região ao redor do buraco negro supermassivo M87*, no centro da galáxia Messier 87, localizada no aglomerado de Virgem.\n\nA imagem não captura o buraco negro em si — já que nenhuma luz escapa dele —, mas sim seu “sombra” projetada contra um anel brilhante de emissão do gás superaquecido que gira ao seu redor. O resultado foi obtido ao combinar observatórios de rádio espalhados pelo planeta, formando um “telescópio do tamanho da Terra” por meio de uma técnica chamada interferometria de longa linha de base (VLBI).\n\nA divulgação veio acompanhada de uma série de artigos científicos publicados em uma edição especial do The Astrophysical Journal Letters. Para a astrofísica, o feito representa um marco: além de confirmar previsões fundamentais da Relatividade Geral em regimes extremos, abre caminho para estudos mais detalhados de como buracos negros crescem, influenciam galáxias e aceleram jatos relativísticos.\n\nFonte: Event Horizon Telescope (Press Release)\nLink: https://eventhorizontelescope.org/press-release-april-10-2019-astronomers-capture-first-image-black-hole",
       "coverImageUrl": "/images/news_01.png",
       "published": true,
       "createdAt": "2019-04-10T00:24:38.616Z",
       "updatedAt": "2019-04-10T00:24:38.616Z",
       "author": "Redação Galatic News",
       "source": {
-        "name": "ESA/Hubble",
-        "url": "https://esahubble.org/news/heic2601/",
-        "publishedAt": "2026-01-05"
+        "name": "Event Horizon Telescope",
+        "url": "https://eventhorizontelescope.org/press-release-april-10-2019-astronomers-capture-first-image-black-hole",
+        "publishedAt": "2019-04-10"
       }
     },
     {
@@ -76,8 +76,8 @@
       "content": "A NASA/JPL divulgou um trabalho que usa observações do James Webb para inferir a distribuição de matéria escura via lentes gravitacionais e distorções sutis no campo de galáxias. O material destaca um mosaico enorme e o mapa de matéria escura sobreposto.\n\nFonte: NASA/JPL (News Release)\nLink: https://www.jpl.nasa.gov/news/nasa-reveals-new-details-about-dark-matters-influence-on-universe/",
       "coverImageUrl": "/images/space_3.jpg",
       "published": true,
-      "createdAt": "2026-01-26T07:11:33",
-      "updatedAt": "2026-01-26T07:11:33",
+      "createdAt": "2026-01-26T07:11:33.000Z",
+      "updatedAt": "2026-01-26T07:11:33.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "NASA Jet Propulsion Laboratory",
@@ -93,8 +93,8 @@
       "content": "A ESA publicou uma nota descrevendo o acompanhamento de um evento de clima espacial em janeiro de 2026. O texto menciona a intensificação de partículas energéticas e a análise de velocidade/chegada de uma CME, além do pico em níveis severos em registros relacionados.\n\nFonte: ESA (Space Safety / Space Weather)\nLink: https://www.esa.int/Space_Safety/Space_weather/ESA_monitoring_January_2026_space_weather_event",
       "coverImageUrl": "/images/space_4.gif",
       "published": true,
-      "createdAt": "2026-01-19T13:13:13",
-      "updatedAt": "2026-01-19T13:13:13",
+      "createdAt": "2026-01-19T13:13:13.000Z",
+      "updatedAt": "2026-01-19T13:13:13.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "European Space Agency (ESA)",
@@ -103,15 +103,15 @@
       }
     },
     {
-      "id": "b4a5f4c4-0f4c-4e2c-9f1a-2e3f0f8a8d91",
+      "id": "5d8d1d1e-36b5-4c67-a5b2-2e0c8d75ef4a",
       "title": "Sol dispara 4 erupções fortes em sequência, registra a NASA",
-      "slug": "sol-quatro-flares-fortes-fevereiro-2026",
+      "slug": "sol-quatro-flares-fortes-fevereiro-2026-2",
       "excerpt": "A NASA relatou múltiplos flares fortes em 1 e 2 de fevereiro, com imagens registradas pelo Solar Dynamics Observatory.",
       "content": "Em atualização do blog do ciclo solar, a NASA descreveu três flares fortes em 1º de fevereiro e um quarto em 2 de fevereiro, com horários de pico e registro pelo SDO (Solar Dynamics Observatory).\n\nFonte: NASA (Solar Cycle 25)\nLink: https://science.nasa.gov/blogs/solar-cycle-25/2026/02/02/sun-releases-4-strong-solar-flares/",
       "coverImageUrl": "/images/space_5.webp",
       "published": true,
-      "createdAt": "2026-02-02T04:32:54",
-      "updatedAt": "2026-02-02T04:32:54",
+      "createdAt": "2026-02-02T04:32:54.000Z",
+      "updatedAt": "2026-02-02T04:32:54.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "NASA Science (Solar Cycle 25)",
@@ -120,15 +120,15 @@
       }
     },
     {
-      "id": "0b7c2de0-36b0-4bb2-9d41-7b3d7a9d3a2a",
+      "id": "2b2c5a5e-6e8e-4bb4-8c27-3cf31a07d61a",
       "title": "TESS fará observação especial do cometa interestelar 3I/ATLAS",
-      "slug": "tess-observacao-especial-cometa-interestelar-3i-atlas",
+      "slug": "tess-observacao-especial-cometa-interestelar-3i-atlas-2",
       "excerpt": "A NASA anunciou uma campanha especial do TESS para observar o cometa interestelar 3I/ATLAS durante janeiro de 2026.",
       "content": "Segundo a NASA, o satélite TESS realizará uma observação especial do cometa interestelar 3I/ATLAS em janeiro de 2026, ajustando temporariamente seu plano de observação para acompanhar o objeto.\n\nFonte: NASA Science\nLink: https://science.nasa.gov/astrophysics/programs/physics-of-the-cosmos/community/tess-special-observation-of-interstellar-comet-3i-atlas/",
       "coverImageUrl": "/images/space_6.webp",
       "published": true,
-      "createdAt": "2026-01-20T20:59:30",
-      "updatedAt": "2026-01-20T20:59:30",
+      "createdAt": "2026-01-20T20:59:30.000Z",
+      "updatedAt": "2026-01-20T20:59:30.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "NASA Science",
@@ -144,8 +144,8 @@
       "content": "A NASA publicou uma lista com eventos astronômicos de 2026, como a chuva de meteoros Quadrântidas (2–3 de janeiro), Júpiter em oposição (10 de janeiro) e eclipses ao longo do ano.\n\nFonte: NASA (Watch the Skies)\nLink: https://www.nasa.gov/blogs/watch-the-skies/2026/01/16/most-notable-2026-astronomical-events-a-year-of-watching-the-skies/",
       "coverImageUrl": "/images/space_7.webp",
       "published": true,
-      "createdAt": "2026-01-16T04:54:26",
-      "updatedAt": "2026-01-16T04:54:26",
+      "createdAt": "2026-01-16T04:54:26.000Z",
+      "updatedAt": "2026-01-16T04:54:26.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "NASA (Watch the Skies)",
@@ -161,8 +161,8 @@
       "content": "A NASA divulgou uma nova imagem capturada pelo telescópio espacial Hubble da galáxia NGC 4388, localizada a ~60 milhões de anos-luz na constelação de Virgem. O destaque é a forma como a galáxia está interagindo com o ambiente do aglomerado, apresentando sinais visuais relacionados à perda de gás ao se mover em alta velocidade pelo meio intracluster — um processo conhecido como ram pressure stripping.\n\nFonte: NASA (Image Article)\nLink: https://www.nasa.gov/image-article/hubble-glimpses-galactic-gas-making-a-getaway/",
       "coverImageUrl": "/images/space_8.webp",
       "published": true,
-      "createdAt": "2026-01-02T22:54:10",
-      "updatedAt": "2026-01-02T22:54:10",
+      "createdAt": "2026-01-02T22:54:10.000Z",
+      "updatedAt": "2026-01-02T22:54:10.000Z",
       "author": "Redação Galatic News",
       "source": {
         "name": "NASA",
