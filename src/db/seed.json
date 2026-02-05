@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "id": "0a7a0a2e-7a34-4e76-9e93-0c2d31235a",
+      "title": "Dia histórico para a ciência: revelada a primeira imagem de buraco negro",
+      "slug": "primeira-imagem-buraco-negro",
+      "excerpt": "Event Horizon Telescope, rede de oito observatórios ao redor do mundo, divulgou hoje a primeira imagem real de um buraco negro supermassivo, fenômeno previsto por Einstein.",
+      "content": "",
+      "coverImageUrl": "/images/news_01.png",
+      "published": true,
+      "createdAt": "2019-04-10T00:24:38.616Z",
+      "updatedAt": "2019-04-10T00:24:38.616Z",
+      "author": "Redação Galatic News",
+      "source": {
+        "name": "ESA/Hubble",
+        "url": "https://esahubble.org/news/heic2601/",
+        "publishedAt": "2026-01-05"
+      }
+    },
+    {
       "id": "0a7a0a2e-7a34-4e76-9e93-0c2d6a2c1e9a",
       "title": "Hubble encontra a “Cloud-9”: uma “galáxia fracassada” sem estrelas",
       "slug": "hubble-cloud-9-objeto-sem-estrelas",
