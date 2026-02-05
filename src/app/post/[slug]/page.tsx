@@ -1,7 +1,7 @@
-import { SinglePost } from "@/src/components/SinglePost";
-import { SpinLoader } from "@/src/components/SpinLoader";
+import { SinglePost } from "../../../components/SinglePost";
+import { SpinLoader } from "../../../components/SpinLoader";
 import { Suspense } from "react";
-import { findPostBySlugCached } from "../../../src/lib/post/queries";
+import { findPostBySlugCached } from "../../../lib/post/queries";
 import { Metadata } from "next";
 
 type PostSlugPageProps = {

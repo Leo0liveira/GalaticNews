@@ -1,6 +1,6 @@
-import { PostsList } from "@/src/components/PostList";
-import { SpinLoader } from "@/src/components/SpinLoader";
-import { PostFeatured } from "@/src/components/PostFeatured";
+import { PostsList } from "../components/PostList";
+import { SpinLoader } from "../components/SpinLoader";
+import { PostFeatured } from "../components/PostFeatured";
 import { Suspense } from "react";
 
 export default async function HomePage() {
