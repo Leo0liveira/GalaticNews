@@ -10,8 +10,6 @@
 !.yarn/releases
 !.yarn/versions
 
-db.sqlite3
-
 # testing
 /coverage
 
