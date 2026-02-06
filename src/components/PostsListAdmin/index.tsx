@@ -25,6 +25,7 @@ export default async function PostsListAdmin() {
                 (Não publicado)
               </span>
             )}
+
             <DeletePostButton id={post.id} title={post.title} />
           </div>
         );
