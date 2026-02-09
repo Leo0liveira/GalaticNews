@@ -4,6 +4,7 @@ import { Button } from "../../../components/Button";
 import { InputCheckbox } from "../../../components/InputCheckbox";
 import { InputText } from "../../../components/InputText";
 import { MarkdownEditor } from "../../../components/MarkdownEditor";
+import { ImageUploader } from "../ImageUploader";
 import { useState } from "react";
 
 export function ManagePostForm() {
@@ -17,6 +18,9 @@ export function ManagePostForm() {
           placeholder="Digite seu nome"
           type="password"
         />
+
+        <ImageUploader />
+
         <InputText labelText="Sobrenome" placeholder="Digite seu sobrenome" />
 
         <InputCheckbox labelText="Sobrenome" />
