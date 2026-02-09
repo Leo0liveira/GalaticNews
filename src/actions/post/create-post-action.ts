@@ -14,6 +14,7 @@ import { redirect } from 'next/navigation';
 type CreatePostActionState = {
   formState: PublicPost;
   errors: string[];
+  success?: true;
 };
 
 export async function createPostAction(
