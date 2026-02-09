@@ -1,11 +1,16 @@
 "use server";
 
+import { drizzleDb } from "../../../src/db/drizzle";
+import { postsTable } from "../../../src/db/drizzle/schemas";
 import { PostModel } from "../../models/post/post.model";
 import { makePartialPublicPost, PublicPost } from "../../dto/post/dto";
 import { PostCreateSchema } from "../../../src/lib/post/validations";
 import { getZodErrorMessages } from "../../../src/utils/get-zod-error-messages";
 import { makeSlugFromText } from "../../../src/utils/make-slug-from-text";
 import { v4 as uuidV4 } from "uuid";
+
+import { revalidateTag } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 type CreatePostActionState = {
   formState: PublicPost;
@@ -45,8 +50,7 @@ export async function createPostAction(
     slug: makeSlugFromText(validPostData.title),
   };
 
-  return {
-    formState: newPost,
-    errors: [],
-  };
+  await drizzleDb.insert(postsTable).values(newPost);
+  revalidateTag('posts', 'default');
+  redirect(`/admin/post/${newPost.id}`);
 }
