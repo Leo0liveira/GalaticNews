@@ -3,11 +3,11 @@
 import { PostModel } from "../../models/post/post.model";
 import { postRepository } from "../../../src/repositories/post";
 import { PostCreateSchema } from "../../../src/lib/post/validations";
+import { verifyLoginSession } from '../../lib/login/manage-login';
 import { makePartialPublicPost, PublicPost } from "../../dto/post/dto";
 import { getZodErrorMessages } from "../../../src/utils/get-zod-error-messages";
 import { makeSlugFromText } from "../../../src/utils/make-slug-from-text";
 import { v4 as uuidV4 } from "uuid";
-
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -21,17 +21,24 @@ export async function createPostAction(
   prevState: CreatePostActionState,
   formData: FormData,
 ): Promise<CreatePostActionState> {
-  // TODO: verificar se o usuário tá logado
+  const isAuthenticated = await verifyLoginSession();
 
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
-      errors: ["Dados inválidos"],
+      errors: ['Dados inválidos'],
     };
   }
 
   const formDataToObj = Object.fromEntries(formData.entries());
   const zodParsedObj = PostCreateSchema.safeParse(formDataToObj);
+
+  if (!isAuthenticated) {
+    return {
+      formState: makePartialPublicPost(formDataToObj),
+      errors: ['Faça login em outra aba antes de salvar.'],
+    };
+  }
 
   if (!zodParsedObj.success) {
     const errors = getZodErrorMessages(zodParsedObj.error);
@@ -62,7 +69,7 @@ export async function createPostAction(
 
     return {
       formState: newPost,
-      errors: ["Erro desconhecido"],
+      errors: ['Erro desconhecido'],
     };
   }
 

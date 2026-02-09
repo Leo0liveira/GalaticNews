@@ -6,10 +6,10 @@ import {
   PublicPost,
 } from "../../dto/post/dto";
 import { PostUpdateSchema } from "../../lib/post/validations";
+import { verifyLoginSession } from '../../lib/login/manage-login';
 import { postRepository } from "../../repositories/post";
 import { getZodErrorMessages } from "../../utils/get-zod-error-messages";
 import { makeRandomString } from "../../../src/utils/make-random-string";
-
 import { revalidateTag } from "next/cache";
 
 type UpdatePostActionState = {
@@ -22,26 +22,33 @@ export async function updatePostAction(
   prevState: UpdatePostActionState,
   formData: FormData,
 ): Promise<UpdatePostActionState> {
-  // TODO: verificar se o usuário tá logado
-  
+  const isAuthenticated = await verifyLoginSession();
+
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
-      errors: ["Dados inválidos"],
+      errors: ['Dados inválidos'],
     };
   }
 
-  const id = formData.get("id")?.toString() || "";
+  const id = formData.get('id')?.toString() || '';
 
-  if (!id || typeof id !== "string") {
+  if (!id || typeof id !== 'string') {
     return {
       formState: prevState.formState,
-      errors: ["ID inválido"],
+      errors: ['ID inválido'],
     };
   }
 
   const formDataToObj = Object.fromEntries(formData.entries());
   const zodParsedObj = PostUpdateSchema.safeParse(formDataToObj);
+
+  if (!isAuthenticated) {
+    return {
+      formState: makePartialPublicPost(formDataToObj),
+      errors: ['Faça login em outra aba antes de salvar.'],
+    };
+  }
 
   if (!zodParsedObj.success) {
     const errors = getZodErrorMessages(zodParsedObj.error);
@@ -69,7 +76,7 @@ export async function updatePostAction(
 
     return {
       formState: makePartialPublicPost(formDataToObj),
-      errors: ["Erro desconhecido"],
+      errors: ['Erro desconhecido'],
     };
   }
 
