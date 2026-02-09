@@ -1,9 +1,11 @@
-'use server';
+"use server";
 
-import { PostCreateSchema } from '../../../src/lib/post/validations';
-import { makePartialPublicPost, PublicPost } from '../../dto/post/dto';
-import { getZodErrorMessages } from '../../../src/utils/get-zod-error-messages';
-import { PostModel } from '../../models/post/post.model';
+import { PostModel } from "../../models/post/post.model";
+import { makePartialPublicPost, PublicPost } from "../../dto/post/dto";
+import { PostCreateSchema } from "../../../src/lib/post/validations";
+import { getZodErrorMessages } from "../../../src/utils/get-zod-error-messages";
+import { makeSlugFromText } from "../../../src/utils/make-slug-from-text";
+import { v4 as uuidV4 } from "uuid";
 
 type CreatePostActionState = {
   formState: PublicPost;
@@ -19,7 +21,7 @@ export async function createPostAction(
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
-      errors: ['Dados inválidos'],
+      errors: ["Dados inválidos"],
     };
   }
 
@@ -39,8 +41,8 @@ export async function createPostAction(
     ...validPostData,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    id: Date.now().toString(),
-    slug: Math.random().toString(36),
+    id: uuidV4(),
+    slug: makeSlugFromText(validPostData.title),
   };
 
   return {
