@@ -1,19 +1,22 @@
-'use server';
+"use server";
 
 import {
   makePartialPublicPost,
   makePublicPostFromDb,
   PublicPost,
-} from '../../dto/post/dto';
-import { PostUpdateSchema } from '../../lib/post/validations';
-import { postRepository } from '../../repositories/post';
-import { getZodErrorMessages } from '../../utils/get-zod-error-messages';
-import { revalidateTag } from 'next/cache';
+} from "../../dto/post/dto";
+import { PostUpdateSchema } from "../../lib/post/validations";
+import { postRepository } from "../../repositories/post";
+import { getZodErrorMessages } from "../../utils/get-zod-error-messages";
+import { asyncDelay } from "../../../src/utils/async-delay";
+import { makeRandomString } from "../../../src/utils/make-random-string";
+
+import { revalidateTag } from "next/cache";
 
 type UpdatePostActionState = {
   formState: PublicPost;
   errors: string[];
-  success?: true;
+  success?: string;
 };
 
 export async function updatePostAction(
@@ -21,20 +24,20 @@ export async function updatePostAction(
   formData: FormData,
 ): Promise<UpdatePostActionState> {
   // TODO: verificar se o usuário tá logado
-
+  await asyncDelay(3000);
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
-      errors: ['Dados inválidos'],
+      errors: ["Dados inválidos"],
     };
   }
 
-  const id = formData.get('id')?.toString() || '';
+  const id = formData.get("id")?.toString() || "";
 
-  if (!id || typeof id !== 'string') {
+  if (!id || typeof id !== "string") {
     return {
       formState: prevState.formState,
-      errors: ['ID inválido'],
+      errors: ["ID inválido"],
     };
   }
 
@@ -67,17 +70,16 @@ export async function updatePostAction(
 
     return {
       formState: makePartialPublicPost(formDataToObj),
-      errors: ['Erro desconhecido'],
+      errors: ["Erro desconhecido"],
     };
   }
 
-  revalidateTag('posts', 'default');
-  revalidateTag(`post-${post.slug}`, 'default');
-  
+  revalidateTag("posts", "default");
+  revalidateTag(`post-${post.slug}`, "default");
 
   return {
     formState: makePublicPostFromDb(post),
     errors: [],
-    success: true,
+    success: makeRandomString(),
   };
 }
