@@ -1,10 +1,9 @@
 "use server";
 
-import { drizzleDb } from "../../../src/db/drizzle";
-import { postsTable } from "../../../src/db/drizzle/schemas";
 import { PostModel } from "../../models/post/post.model";
-import { makePartialPublicPost, PublicPost } from "../../dto/post/dto";
+import { postRepository } from "../../../src/repositories/post";
 import { PostCreateSchema } from "../../../src/lib/post/validations";
+import { makePartialPublicPost, PublicPost } from "../../dto/post/dto";
 import { getZodErrorMessages } from "../../../src/utils/get-zod-error-messages";
 import { makeSlugFromText } from "../../../src/utils/make-slug-from-text";
 import { v4 as uuidV4 } from "uuid";
@@ -50,7 +49,22 @@ export async function createPostAction(
     slug: makeSlugFromText(validPostData.title),
   };
 
-  await drizzleDb.insert(postsTable).values(newPost);
+ try {
+    await postRepository.create(newPost);
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return {
+        formState: newPost,
+        errors: [e.message],
+      };
+    }
+
+    return {
+      formState: newPost,
+      errors: ['Erro desconhecido'],
+    };
+  }
+  
   revalidateTag('posts', 'default');
   redirect(`/admin/post/${newPost.id}`);
 }
