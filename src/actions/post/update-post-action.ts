@@ -8,7 +8,6 @@ import {
 import { PostUpdateSchema } from "../../lib/post/validations";
 import { postRepository } from "../../repositories/post";
 import { getZodErrorMessages } from "../../utils/get-zod-error-messages";
-import { asyncDelay } from "../../../src/utils/async-delay";
 import { makeRandomString } from "../../../src/utils/make-random-string";
 
 import { revalidateTag } from "next/cache";
@@ -24,7 +23,7 @@ export async function updatePostAction(
   formData: FormData,
 ): Promise<UpdatePostActionState> {
   // TODO: verificar se o usuário tá logado
-  await asyncDelay(3000);
+  
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
